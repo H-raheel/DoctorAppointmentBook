@@ -24,11 +24,27 @@ const PatientDetails = () => {
     // Handle voucher logic here
   };
 
+<<<<<<< Updated upstream
   return (
     <div className="patient-details-container">
       <div className="header">
         <h1>Patient Details</h1>
       </div>
+=======
+  const validateMobile = (value) => {
+    const isValid = /^\d{11}$/.test(value);
+    return isValid ? "" : "Mobile number must be 11 digits";
+  };
+
+  return (
+    
+    <div>
+      <div className="pheader">
+        <h1>Patient Details</h1>
+      </div>
+    <div className="patient-details-container">
+    
+>>>>>>> Stashed changes
 
       <form className="patient-form">
         <label htmlFor="name">Patient's Name:</label>
@@ -87,6 +103,7 @@ const PatientDetails = () => {
           />
         </div>
 
+<<<<<<< Updated upstream
         <label htmlFor="mobile">Mobile Number:</label>
         <input
           type="tel"
@@ -97,6 +114,20 @@ const PatientDetails = () => {
           onChange={(e) => setMobile(e.target.value)}
           required
         />
+=======
+        <label htmlFor="mobile">Mobile Number: <span style={{ color: '#ff0000', fontSize: '0.7em', marginTop: '5px', display: 'block' }}>{validateMobile(mobile)}</span></label>
+  
+  <input
+    type="number"
+    id="mobile"
+    value={mobile}
+    onChange={(e) => setMobile(e.target.value)}
+    pattern="\d{11}"
+    required
+    title="Mobile number must be 11 digits"
+    
+  />
+>>>>>>> Stashed changes
 
         <label htmlFor="email">Email:</label>
         <input
@@ -127,6 +158,10 @@ const PatientDetails = () => {
         </div>
       </form>
     </div>
+<<<<<<< Updated upstream
+=======
+    </div>
+>>>>>>> Stashed changes
   );
 };
 
