@@ -47,7 +47,8 @@ function Login() {
         console.log(username);
         //navigate('/Homepage');
         
-        navigate('/Home', { state: { ...location.state, username: response.data[0] } });
+        navigate('/Home');
+        localStorage.setItem('username', true);
         setErrorMessage('Succesful Login');
         } )
       }

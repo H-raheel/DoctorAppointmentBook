@@ -9,6 +9,7 @@ import CreateAccount from './CreateAccount';
 import Home from './Home';
 import Search from './Search';
 import Location from './Location';
+import PatientDetails from './PatientDetails';
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
   const isLoggedIn = localStorage.getItem('userlogged');
@@ -19,6 +20,7 @@ function App(){
   return (
     <Router>
       <Routes>
+        <Route path="/PatientDetails" element={<PatientDetails/>}/>
         <Route path="/Login" element={<Login />} />
         <Route path="/ForgetPassword" element={<ForgetPassword />} />
         <Route path="/CreateAccount" element={<CreateAccount/>} />

@@ -256,10 +256,11 @@ app.post("/adddetails", async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
-
+  let connection; 
+  
   try {
     console.log(req.body);
-    const connection = await oracledb.getConnection();
+    connection = await oracledb.getConnection();
     const insertSQL =
       "BEGIN INSERT INTO CREDENTIALS  VALUES (:username, :email, :password); END;"
     const result = await connection.execute(

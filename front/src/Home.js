@@ -15,14 +15,14 @@ function Home() {
   const [location, setLocation] = useState('');
   const [category, setCategory] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [username, setUsername] = useState("");
 
   const data = { location, category };
   const navigate = useNavigate();
   const l = useLocation();
   const { state } = l;
 
-  // Access the username from location.state
-  const username = state ? state.username : null;
+
 
   const logout = () => {
     localStorage.removeItem('userlogged');
@@ -49,7 +49,7 @@ function Home() {
         </div>
         <div className="logo">
           {/* Your logo content goes here */}
-          <div className="welcome-message">WELCOME , {username}!</div>
+          <div className="welcome-message">WELCOME , {localStorage.getItem('username')}!</div>
           <img src={image} alt="Logo" className='logoimg' />
         </div>
       </div>
